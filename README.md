@@ -1,4 +1,4 @@
-Meteor Publish Performant Counts
+quave:meteor-publish-performant-counts
 ================================
 
 A package to help you publish the count of a cursor in near real time.  Interval based counting suitable for very large collections and high user load.
