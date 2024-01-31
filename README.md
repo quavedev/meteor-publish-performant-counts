@@ -1,11 +1,8 @@
-quave:meteor-publish-performant-counts
-================================
+# quave:meteor-publish-performant-counts
 
-A package to help you publish the count of a cursor in near real time.  Interval based counting suitable for very large collections and high user load.
-
+A package to help you publish the count of a cursor in near real time. Interval based counting suitable for very large collections and high user load.
 
 ## Counter API
-
 
 ```
 new Counter(name, cursor, [updateInterval])
@@ -17,14 +14,11 @@ new Counter(name, cursor, [updateInterval])
 
 `updateInterval` defaults to 10000, which will update the count every 10 seconds.
 
-
 ## Publish from Server
-
 
 ### Publish scoped counts
 
-Counts that are specific to a user or parameter must be declared within the publish function.  This will create 1 counter for each user who subscribes.
-
+Counts that are specific to a user or parameter must be declared within the publish function. This will create 1 counter for each user who subscribes.
 
 ```
 Meteor.publish('countPublish', function(someValue) {
@@ -35,13 +29,9 @@ Meteor.publish('countPublish', function(someValue) {
 });
 ```
 
-
-
 ### Server scoped counts
 
-
 Server scoped counts that are defined outside of publish functions are more efficient that specific counts as it only creates 1 counter per server.
-
 
 ```
 var counter = new Counter('countCollection', Collection.find({}));
@@ -50,9 +40,6 @@ Meteor.publish('countPublish', function() {
   return counter;
 });
 ```
-
-
-
 
 ## Subscribe from client
 
@@ -73,7 +60,6 @@ UI.registerHelper("getCount", function(name) {
 });
 ```
 
-
 Call from within a template
 
 ```
@@ -82,14 +68,12 @@ Call from within a template
 ...
 ```
 
-Credits
-=======
+# Credits
 
 Inspired by [publish-counts](https://github.com/percolatestudio/publish-counts) which is great, but does run into performance issues with large collections
 
 Performant solution derived directly from [bullet-counter](https://github.com/bulletproof-meteor/bullet-counter/tree/solution)
 
+# License
 
-License
-=======
 MIT

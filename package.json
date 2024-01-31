@@ -1,0 +1,8 @@
+{
+  "name": "meteor-publish-performant-counts",
+  "version": "1.0.0",
+  "description": "Meteor package for publish collection counts",
+  "devDependencies": {
+    "prettier": "^3.2.4"
+  }
+}
